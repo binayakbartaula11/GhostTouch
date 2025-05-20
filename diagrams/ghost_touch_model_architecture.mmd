@@ -1,0 +1,28 @@
+flowchart TB
+    subgraph Capture["🎥 Input Capture"]
+        A["📷 Standard Webcam Feed"] --> B["🖐️ MediaPipe Hand Tracking"]
+        B --> C["🔎 Landmark Detection<br/>(21 Points)"]
+    end
+
+    subgraph Recognition["🧠 Gesture Recognition"]
+        C --> D["📌 Finger Position Tracker"]
+        D --> E["📈 Gesture Analyzer"]
+        E --> F["🔄 Mode Controller"]
+    end
+
+    subgraph Action["⚙️ System Control"]
+        F --> G["🔊 Volume Control<br/>Thumb–Index Distance"]
+        F --> H["🖱️ Smooth Scrolling<br/>with Momentum"]
+        G & H --> I["🖥️ System-Level Input Actions"]
+    end
+
+    subgraph Feedback["👁️ Visual Feedback"]
+        I --> J["🧩 UI Overlays<br/>+ State Indicators"]
+        J --> K["📊 Performance Metrics Display"]
+    end
+
+    %% Section Styles
+    style Capture fill:#ede7f6,stroke:#512da8,color:#000
+    style Recognition fill:#e8f5e9,stroke:#1b5e20,color:#000
+    style Action fill:#fff8e1,stroke:#ff6f00,color:#000
+    style Feedback fill:#fce4ec,stroke:#880e4f,color:#000
