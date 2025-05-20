@@ -1,0 +1,15 @@
+# Core dependencies
+mediapipe>=0.8.9
+opencv-python>=4.5.0
+pyautogui>=0.9.50
+numpy>=1.19.0
+
+# Platform-specific dependencies
+pycaw>=20181226; platform_system == "Windows"  # Windows only
+comtypes>=1.1.14; platform_system == "Windows"  # Required for pycaw on Windows
+
+# Development dependencies
+pytest>=7.0.0  # For testing
+black>=22.0.0  # For code formatting
+mypy>=0.900  # For type checking
+pylint>=2.8.0  # For code linting 
